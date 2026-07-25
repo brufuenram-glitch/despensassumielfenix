@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Despensas Sumifénix — Despensas empresariales, arcones navideños, canastas y regalos corporativos para empresas. Solicita tu cotización por WhatsApp." />
+  <meta name="keywords" content="despensas empresariales, arcones navideños, canastas corporativas, regalos empresariales, kits personalizados, regalos colaboradores" />
+  <meta property="og:title" content="Despensas Sumifénix — Regalos Corporativos y Despensas Empresariales" />
+  <meta property="og:description" content="Despensas, arcones y canastas corporativas para empresas que valoran a sus colaboradores." />
+  <meta property="og:type" content="website" />
+  <title>Despensas Sumifénix — Regalos Corporativos &amp; Despensas Empresariales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER STICKY
+  ═══════════════════════════════════════════ -->
+  <header class="header" id="header" role="banner">
+    <div class="header__inner container">
+
+      <!-- Logo -->
+      <a href="#inicio" class="header__logo" aria-label="Despensas Sumifénix — Inicio">
+        <span class="logo__icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2L4 8v16l12 6 12-6V8L16 2z" fill="#C9A227" opacity="0.15"/>
+            <path d="M16 2L4 8v16l12 6 12-6V8L16 2z" stroke="#C9A227" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M4 8l12 6 12-6M16 14v16" stroke="#C9A227" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="logo__text">
+          <span class="logo__brand">Sumifénix</span>
+          <span class="logo__sub">Despensas Empresariales</span>
+        </span>
+      </a>
+
+      <!-- Nav Desktop -->
+      <nav class="header__nav" aria-label="Navegación principal">
+        <a href="#inicio" class="nav__link">Inicio</a>
+        <a href="#productos" class="nav__link">Productos</a>
+        <a href="#nosotros" class="nav__link">Nosotros</a>
+        <a href="#contacto" class="nav__link">Contacto</a>
+      </nav>
+
+      <!-- Header Right -->
+      <div class="header__right">
+        <!-- Redes sociales -->
+        <div class="header__socials" aria-label="Redes sociales">
+          <a href="#" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="TikTok" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+        </div>
+
+        <!-- Mi Cotización -->
+        <button class="btn-quote-trigger" id="quoteTrigger" aria-label="Abrir Mi Cotización" aria-expanded="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+          <span>Mi Cotización</span>
+          <span class="quote-badge" id="quoteBadge" aria-live="polite" aria-label="productos en cotización">0</span>
+        </button>
+
+        <!-- CTA WhatsApp -->
+        <a href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20interesa%20cotizar%20sus%20productos.%20%C2%BFPodr%C3%ADan%20ayudarme%3F" 
+           class="btn btn--whatsapp btn--header" 
+           id="headerWhatsappBtn"
+           target="_blank" 
+           rel="noopener"
+           aria-label="Cotizar por WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          Cotiza por WhatsApp
+        </a>
+
+        <!-- Hamburger Mobile -->
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+          <span class="hamburger__bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil" aria-hidden="true">
+      <a href="#inicio" class="mobile-menu__link" data-close-menu>Inicio</a>
+      <a href="#productos" class="mobile-menu__link" data-close-menu>Productos</a>
+      <a href="#nosotros" class="mobile-menu__link" data-close-menu>Nosotros</a>
+      <a href="#contacto" class="mobile-menu__link" data-close-menu>Contacto</a>
+      <div class="mobile-menu__socials">
+        <a href="#" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="TikTok" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+      <a href="https://wa.me/521XXXXXXXXXX" class="btn btn--whatsapp mobile-menu__cta" target="_blank" rel="noopener">
+        Cotiza por WhatsApp
+      </a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════ -->
+    <section class="hero" id="inicio" aria-labelledby="heroTitle">
+      <div class="hero__bg" aria-hidden="true">
+        <img src="assets/hero-bg.jpg" 
+             alt="" 
+             class="hero__bg-img"
+             loading="eager" />
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="hero__content container">
+        <div class="hero__text">
+          <p class="hero__eyebrow">Regalos Corporativos &amp; Despensas Empresariales</p>
+          <h1 class="hero__title" id="heroTitle">
+            Regalos que reflejan<br/>
+            <span class="text-gold">la calidad de tu marca.</span>
+          </h1>
+          <p class="hero__subtitle">
+            Despensas, arcones y canastas corporativas para empresas<br class="br-desktop"/>
+            que valoran a sus colaboradores y clientes.
+          </p>
+
+          <div class="hero__actions">
+            <a href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20interesa%20cotizar%20sus%20productos.%20%C2%BFPodr%C3%ADan%20ayudarme%3F"
+               class="btn btn--whatsapp btn--lg"
+               id="heroWhatsappBtn"
+               target="_blank"
+               rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+              Cotiza por WhatsApp
+            </a>
+            <a href="#productos" class="btn btn--outline btn--lg">
+              Ver Catálogo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+          </div>
+
+          <!-- Redes sociales hero -->
+          <div class="hero__socials" aria-label="Síguenos en redes sociales">
+            <span class="hero__socials-label">Síguenos:</span>
+            <a href="#" class="social-icon social-icon--light" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="social-icon social-icon--light" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="social-icon social-icon--light" aria-label="TikTok" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Beneficios rápidos -->
+        <div class="hero__benefits" aria-label="Nuestros beneficios">
+          <div class="benefit-item">
+            <svg class="benefit-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Facturación Electrónica</span>
+          </div>
+          <div class="benefit-item">
+            <svg class="benefit-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Personalización Total</span>
+          </div>
+          <div class="benefit-item">
+            <svg class="benefit-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Entregas Programadas</span>
+          </div>
+          <div class="benefit-item">
+            <svg class="benefit-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Atención Empresarial</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CLIENTES / CONFIANZA
+    ═══════════════════════════════════════════ -->
+    <section class="clients" aria-label="Tipos de clientes que atendemos">
+      <div class="container">
+        <p class="clients__label">Atendemos a</p>
+        <div class="clients__list">
+          <span class="client-tag">Empresas</span>
+          <span class="client-tag">Recursos Humanos</span>
+          <span class="client-tag">Corporativos</span>
+          <span class="client-tag">Constructoras</span>
+          <span class="client-tag">Escuelas</span>
+          <span class="client-tag">Gobierno</span>
+          <span class="client-tag">Industrias</span>
+          <span class="client-tag">Dueños de Negocio</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PRODUCTOS / CATÁLOGO
+    ═══════════════════════════════════════════ -->
+    <section class="products" id="productos" aria-labelledby="productsTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Catálogo</p>
+          <h2 class="section-title" id="productsTitle">Todo lo que tu empresa necesita</h2>
+          <p class="section-subtitle">Selecciona los productos que te interesan y solicita tu cotización personalizada.</p>
+        </div>
+
+        <!-- Filtros -->
+        <div class="filters reveal" role="tablist" aria-label="Filtrar productos por categoría">
+          <button class="chip chip--active" data-category="all" role="tab" aria-selected="true" id="filter-all">Todos</button>
+          <button class="chip" data-category="despensas" role="tab" aria-selected="false" id="filter-despensas">Despensas</button>
+          <button class="chip" data-category="arcones" role="tab" aria-selected="false" id="filter-arcones">Arcones</button>
+          <button class="chip" data-category="canastas" role="tab" aria-selected="false" id="filter-canastas">Canastas</button>
+          <button class="chip" data-category="regalos" role="tab" aria-selected="false" id="filter-regalos">Regalos Corporativos</button>
+        </div>
+
+        <!-- Grid de productos -->
+        <div class="products__grid" id="productsGrid" role="list">
+
+          <!-- Producto 1: Despensa Clásica -->
+          <article class="card-product reveal" data-category="despensas" role="listitem">
+            <div class="card-product__image">
+              <div class="card-product__img-placeholder card-product__img-placeholder--despensa" aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </div>
+              <span class="card-product__badge">Más Popular</span>
+            </div>
+            <div class="card-product__body">
+              <span class="card-product__category">Despensas</span>
+              <h3 class="card-product__title">Despensa Clásica</h3>
+              <p class="card-product__desc">Canasta con productos de primera necesidad. Aceite, azúcar, arroz, pasta, frijoles y más. Ideal para colaboradores.</p>
+              <div class="card-product__actions">
+                <button class="btn btn--ghost btn--sm card-product__detail-btn" 
+                        data-product-id="despensa-clasica"
+                        aria-label="Ver contenido de Despensa Clásica">
+                  Ver contenido
+                </button>
+                <button class="btn btn--primary btn--sm card-product__add-btn"
+                        data-product-id="despensa-clasica"
+                        data-product-name="Despensa Clásica"
+                        aria-label="Agregar Despensa Clásica a Mi Cotización">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Agregar
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 2: Despensa Ejecutiva -->
+          <article class="card-product reveal" data-category="despensas" role="listitem">
+            <div class="card-product__image">
+              <div class="card-product__img-placeholder card-product__img-placeholder--ejecutiva" aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </div>
+            </div>
+            <div class="card-product__body">
+              <span class="card-product__category">Despensas</span>
+              <h3 class="card-product__title">Despensa Ejecutiva</h3>
+              <p class="card-product__desc">Versión premium con productos de marca reconocida. Mayor variedad y calidad para mandos medios y ejecutivos.</p>
+              <div class="card-product__actions">
+                <button class="btn btn--ghost btn--sm card-product__detail-btn"
+                        data-product-id="despensa-ejecutiva"
+                        aria-label="Ver contenido de Despensa Ejecutiva">
+                  Ver contenido
+                </button>
+                <button class="btn btn--primary btn--sm card-product__add-btn"
+                        data-product-id="despensa-ejecutiva"
+                        data-product-name="Despensa Ejecutiva"
+                        aria-label="Agregar Despensa Ejecutiva a Mi Cotización">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Agregar
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 3: Arcón Navideño Premium -->
+          <article class="card-product reveal" data-category="arcones" role="listitem">
+            <div class="card-product__image">
+              <div class="card-product__img-placeholder card-product__img-placeholder--arcon" aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+              </div>
+              <span class="card-product__badge card-product__badge--gold">Temporada</span>
+            </div>
+            <div class="card-product__body">
+              <span class="card-product__category">Arcones</span>
+              <h3 class="card-product__title">Arcón Navideño Premium</h3>
+              <p class="card-product__desc">Arcón elegante con productos gourmet, vino, chocolates artesanales y detalles navideños. Impresiona a tus clientes y socios.</p>
+              <div class="card-product__actions">
+                <button class="btn btn--ghost btn--sm card-product__detail-btn"
+                        data-product-id="arcon-premium"
+                        aria-label="Ver contenido de Arcón Navideño Premium">
+                  Ver contenido
+                </button>
+                <button class="btn btn--primary btn--sm card-product__add-btn"
+                        data-product-id="arcon-premium"
+                        data-product-name="Arcón Navideño Premium"
+                        aria-label="Agregar Arcón Navideño Premium a Mi Cotización">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Agregar
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 4: Arcón Empresarial -->
+          <article class="card-product reveal" data-category="arcones" role="listitem">
+            <div class="card-product__image">
+              <div class="card-product__img-placeholder card-product__img-placeholder--arcon2" aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+              </div>
+            </div>
+            <div class="card-product__body">
+              <span class="card-product__category">Arcones</span>
+              <h3 class="card-product__title">Arcón Empresarial</h3>
+              <p class="card-product__desc">Arcón corporativo con capacidad para grandes pedidos. Contenido personalizable según el perfil de tus colaboradores.</p>
+              <div class="card-product__actions">
+                <button class="btn btn--ghost btn--sm card-product__detail-btn"
+                        data-product-id="arcon-empresarial"
+                        aria-label="Ver contenido de Arcón Empresarial">
+                  Ver contenido
+                </button>
+                <button class="btn btn--primary btn--sm card-product__add-btn"
+                        data-product-id="arcon-empresarial"
+                        data-product-name="Arcón Empresarial"
+                        aria-label="Agregar Arcón Empresarial a Mi Cotización">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Agregar
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 5: Canasta Corporativa -->
+          <article class="card-product reveal" data-category="canastas" role="listitem">
+            <div class="card-product__image">
+              <div class="card-product__img-placeholder card-product__img-placeholder--canasta" aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              </div>
+            </div>
+            <div class="card-product__body">
+              <span class="card-product__category">Canastas</span>
+              <h3 class="card-product__title">Canasta Corporativa</h3>
+              <p class="card-product__desc">Canasta gourmet con productos selectos para regalar a clientes especiales. Presentación elegante con listón dorado.</p>
+              <div class="card-product__actions">
+                <button class="btn btn--ghost btn--sm card-product__detail-btn"
+                        data-product-id="canasta-corporativa"
+                        aria-label="Ver contenido de Canasta Corporativa">
+                  Ver contenido
+                </button>
+                <button class="btn btn--primary btn--sm card-product__add-btn"
+                        data-product-id="canasta-corporativa"
+                        data-product-name="Canasta Corporativa"
+                        aria-label="Agregar Canasta Corporativa a Mi Cotización">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Agregar
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 6: Kit Personalizado -->
+          <article class="card-product reveal" data-category="regalos" role="listitem">
+            <div class="card-product__image">
+              <div class="card-product__img-placeholder card-product__img-placeholder--kit" aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+              </div>
+              <span class="card-product__badge card-product__badge--green">Personalizable</span>
+            </div>
+            <div class="card-product__body">
+              <span class="card-product__category">Regalos Corporativos</span>
+              <h3 class="card-product__title">Kit Personalizado</h3>
+              <p class="card-product__desc">Diseñamos el kit ideal para tu empresa. Tú eliges los productos, nosotros lo armamos con tu marca y mensaje.</p>
+              <div class="card-product__actions">
+                <button class="btn btn--ghost btn--sm card-product__detail-btn"
+                        data-product-id="kit-personalizado"
+                        aria-label="Ver contenido de Kit Personalizado">
+                  Ver contenido
+                </button>
+                <button class="btn btn--primary btn--sm card-product__add-btn"
+                        data-product-id="kit-personalizado"
+                        data-product-name="Kit Personalizado"
+                        aria-label="Agregar Kit Personalizado a Mi Cotización">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Agregar
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 7: Regalo para Clientes -->
+          <article class="card-product reveal" data-category="regalos" role="listitem">
+            <div class="card-product__image">
+              <div class="card-product__img-placeholder card-product__img-placeholder--cliente" aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+              </div>
+            </div>
+            <div class="card-product__body">
+              <span class="card-product__category">Regalos Corporativos</span>
+              <h3 class="card-product__title">Regalo para Clientes</h3>
+              <p class="card-product__desc">Fortalece relaciones comerciales con un detalle memorable. Selección curada de productos premium con presentación ejecutiva.</p>
+              <div class="card-product__actions">
+                <button class="btn btn--ghost btn--sm card-product__detail-btn"
+                        data-product-id="regalo-clientes"
+                        aria-label="Ver contenido de Regalo para Clientes">
+                  Ver contenido
+                </button>
+                <button class="btn btn--primary btn--sm card-product__add-btn"
+                        data-product-id="regalo-clientes"
+                        data-product-name="Regalo para Clientes"
+                        aria-label="Agregar Regalo para Clientes a Mi Cotización">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Agregar
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 8: Pedido Especial -->
+          <article class="card-product reveal" data-category="regalos" role="listitem">
+            <div class="card-product__image">
+              <div class="card-product__img-placeholder card-product__img-placeholder--especial" aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <span class="card-product__badge card-product__badge--dark">Por cotizar</span>
+            </div>
+            <div class="card-product__body">
+              <span class="card-product__category">Regalos Corporativos</span>
+              <h3 class="card-product__title">Pedido Especial</h3>
+              <p class="card-product__desc">¿Necesitas algo diferente? Cuéntanos tu idea y armamos una propuesta a la medida de tu empresa y presupuesto.</p>
+              <div class="card-product__actions">
+                <button class="btn btn--ghost btn--sm card-product__detail-btn"
+                        data-product-id="pedido-especial"
+                        aria-label="Ver contenido de Pedido Especial">
+                  Ver contenido
+                </button>
+                <button class="btn btn--primary btn--sm card-product__add-btn"
+                        data-product-id="pedido-especial"
+                        data-product-name="Pedido Especial"
+                        aria-label="Agregar Pedido Especial a Mi Cotización">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Agregar
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /products__grid -->
+
+        <!-- CTA Catálogo PDF -->
+        <div class="products__cta reveal">
+          <a href="#" class="btn btn--outline" id="downloadCatalogBtn" aria-label="Descargar catálogo en PDF">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Descargar Catálogo PDF
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CÓMO FUNCIONA
+    ═══════════════════════════════════════════ -->
+    <section class="how-it-works" id="como-funciona" aria-labelledby="howTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">El proceso</p>
+          <h2 class="section-title" id="howTitle">Así de fácil es cotizar</h2>
+          <p class="section-subtitle">Sin complicaciones. Seleccionas, nosotros nos encargamos del resto.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step-card reveal">
+            <div class="step-card__number">01</div>
+            <div class="step-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+            </div>
+            <h3 class="step-card__title">Selecciona productos</h3>
+            <p class="step-card__desc">Explora nuestro catálogo y agrega los productos que te interesan a tu cotización.</p>
+          </div>
+          <div class="step-card__arrow" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-card__number">02</div>
+            <div class="step-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 class="step-card__title">Nos contactas</h3>
+            <p class="step-card__desc">Envías tu lista por WhatsApp. Respondemos en minutos con precios y opciones.</p>
+          </div>
+          <div class="step-card__arrow" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-card__number">03</div>
+            <div class="step-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            </div>
+            <h3 class="step-card__title">Personalizamos</h3>
+            <p class="step-card__desc">Adaptamos cada detalle a tu empresa: logo, mensaje, cantidad y presentación.</p>
+          </div>
+          <div class="step-card__arrow" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-card__number">04</div>
+            <div class="step-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <h3 class="step-card__title">Entregamos</h3>
+            <p class="step-card__desc">Coordinamos la logística y entregamos puntualmente en la fecha que necesitas.</p>
+          </div>
+          <div class="step-card__arrow" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-card__number">05</div>
+            <div class="step-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 class="step-card__title">Confirmamos</h3>
+            <p class="step-card__desc">Te notificamos por WhatsApp la entrega exitosa. Tu satisfacción es nuestra prioridad.</p>
+          </div>
+        </div>
+
+        <div class="how-it-works__cta reveal">
+          <a href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20interesa%20cotizar%20sus%20productos.%20%C2%BFPodr%C3%ADan%20ayudarme%3F"
+             class="btn btn--whatsapp btn--lg"
+             target="_blank"
+             rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            Iniciar Cotización
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         NOSOTROS
+    ═══════════════════════════════════════════ -->
+    <section class="about" id="nosotros" aria-labelledby="aboutTitle">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__visual reveal">
+            <div class="about__image-wrap">
+              <div class="about__image-placeholder" aria-hidden="true">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="about__badge-float">
+                <div class="about__stat-float">
+                  <span class="about__stat-float-num">+500</span>
+                  <span class="about__stat-float-label">Empresas atendidas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__content reveal">
+            <p class="section-eyebrow">Nosotros</p>
+            <h2 class="section-title" id="aboutTitle">Confianza que se construye<br/>con cada entrega.</h2>
+            <p class="about__text">
+              En Sumifénix llevamos años siendo el aliado de confianza de empresas en toda la región. 
+              Sabemos que cuando una empresa nos confía sus regalos corporativos, 
+              también nos confía su reputación frente a sus colaboradores y clientes.
+            </p>
+            <p class="about__text">
+              Por eso, cada despensa, cada arcón y cada canasta se arma con el mismo cuidado 
+              que pondríamos en el nuestro propio.
+            </p>
+
+            <div class="about__stats">
+              <div class="stat-card">
+                <span class="stat-card__num">+500</span>
+                <span class="stat-card__label">Empresas atendidas</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-card__num">15+</span>
+                <span class="stat-card__label">Años de experiencia</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-card__num">100%</span>
+                <span class="stat-card__label">Entregas cumplidas</span>
+              </div>
+            </div>
+
+            <div class="about__clients-label">Empresas que confían en nosotros:</div>
+            <div class="about__client-types">
+              <span class="client-chip">Empresas Privadas</span>
+              <span class="client-chip">Gobierno</span>
+              <span class="client-chip">Constructoras</span>
+              <span class="client-chip">Escuelas</span>
+              <span class="client-chip">Industrias</span>
+              <span class="client-chip">Corporativos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FAQ
+    ═══════════════════════════════════════════ -->
+    <section class="faq" id="faq" aria-labelledby="faqTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Preguntas frecuentes</p>
+          <h2 class="section-title" id="faqTitle">Resolvemos tus dudas</h2>
+          <p class="section-subtitle">Todo lo que necesitas saber antes de solicitar tu cotización.</p>
+        </div>
+
+        <div class="faq__list reveal" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__question" aria-expanded="false" id="faq1-btn" aria-controls="faq1-answer">
+              <span>¿Emiten factura electrónica?</span>
+              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-item__answer" id="faq1-answer" role="region" aria-labelledby="faq1-btn">
+              <p>Sí. Emitimos factura electrónica (CFDI) para todos nuestros pedidos. Trabajamos con empresas, gobierno e instituciones que requieren facturación formal.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__question" aria-expanded="false" id="faq2-btn" aria-controls="faq2-answer">
+              <span>¿Hacen entregas a domicilio?</span>
+              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-item__answer" id="faq2-answer" role="region" aria-labelledby="faq2-btn">
+              <p>Sí. Coordinamos entregas directamente en las instalaciones de tu empresa, en la dirección que nos indiques, o distribuidas entre varios domicilios si así lo requieres.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__question" aria-expanded="false" id="faq3-btn" aria-controls="faq3-answer">
+              <span>¿Pueden personalizar los productos con mi logo?</span>
+              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-item__answer" id="faq3-answer" role="region" aria-labelledby="faq3-btn">
+              <p>Absolutamente. Personalizamos con el logo de tu empresa, mensaje corporativo, colores institucionales y hasta el diseño de la caja o presentación. Cada detalle habla de tu marca.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__question" aria-expanded="false" id="faq4-btn" aria-controls="faq4-answer">
+              <span>¿Cuánto tiempo tarda la entrega?</span>
+              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-item__answer" id="faq4-answer" role="region" aria-labelledby="faq4-btn">
+              <p>El tiempo de producción varía según la cantidad y personalización del pedido. Pedidos estándar: 3-5 días hábiles. Pedidos personalizados o grandes volúmenes: 7-15 días hábiles. Te recomendamos planificar con anticipación especialmente en temporada navideña.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__question" aria-expanded="false" id="faq5-btn" aria-controls="faq5-answer">
+              <span>¿Hay un pedido mínimo?</span>
+              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-item__answer" id="faq5-answer" role="region" aria-labelledby="faq5-btn">
+              <p>Manejamos pedidos desde 10 piezas. A mayor volumen, mejores precios. Contáctanos para obtener una cotización personalizada según la cantidad que necesitas.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__question" aria-expanded="false" id="faq6-btn" aria-controls="faq6-answer">
+              <span>¿Atienden pedidos para grandes empresas?</span>
+              <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-item__answer" id="faq6-answer" role="region" aria-labelledby="faq6-btn">
+              <p>Sí. Tenemos capacidad para atender pedidos de cientos y miles de piezas. Hemos trabajado con corporativos, gobierno, constructoras e industrias con pedidos desde 50 hasta más de 3,000 piezas.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="faq__cta reveal">
+          <p>¿Tienes más preguntas?</p>
+          <a href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20tengo%20algunas%20preguntas%20sobre%20sus%20productos.%20%C2%BFPodr%C3%ADan%20ayudarme%3F"
+             class="btn btn--outline"
+             target="_blank"
+             rel="noopener">
+            Pregúntanos por WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CTA FINAL / CONTACTO
+    ═══════════════════════════════════════════ -->
+    <section class="cta-final" id="contacto" aria-labelledby="ctaTitle">
+      <div class="container">
+        <div class="cta-final__content reveal">
+          <p class="section-eyebrow section-eyebrow--light">¿Listo para empezar?</p>
+          <h2 class="cta-final__title" id="ctaTitle">
+            Sorprende a tu equipo.<br/>
+            <span class="text-gold">Empieza hoy.</span>
+          </h2>
+          <p class="cta-final__subtitle">
+            Escríbenos por WhatsApp y recibe una cotización personalizada<br class="br-desktop"/>
+            en minutos. Sin compromiso.
+          </p>
+          <a href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20interesa%20cotizar%20sus%20productos%20para%20mi%20empresa.%20%C2%BFPodr%C3%ADan%20ayudarme%3F"
+             class="btn btn--whatsapp btn--xl"
+             id="ctaWhatsappBtn"
+             target="_blank"
+             rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            Solicitar Cotización por WhatsApp
+          </a>
+
+          <div class="cta-final__contact-info">
+            <div class="contact-info-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 7 7l.91-1.02a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+52 (XX) XXXX-XXXX</span>
+            </div>
+            <div class="contact-info-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>contacto@sumifenix.com</span>
+            </div>
+            <div class="contact-info-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>México</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#inicio" class="header__logo footer__logo" aria-label="Despensas Sumifénix — Inicio">
+            <span class="logo__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 2L4 8v16l12 6 12-6V8L16 2z" fill="#C9A227" opacity="0.15"/>
+                <path d="M16 2L4 8v16l12 6 12-6V8L16 2z" stroke="#C9A227" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M4 8l12 6 12-6M16 14v16" stroke="#C9A227" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="logo__text">
+              <span class="logo__brand">Sumifénix</span>
+              <span class="logo__sub">Despensas Empresariales</span>
+            </span>
+          </a>
+          <p class="footer__tagline">Regalos corporativos que reflejan<br/>la calidad de tu marca.</p>
+          <div class="footer__socials" aria-label="Redes sociales">
+            <a href="#" class="social-icon social-icon--footer" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="social-icon social-icon--footer" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="social-icon social-icon--footer" aria-label="TikTok" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__nav">
+          <h3 class="footer__nav-title">Navegación</h3>
+          <ul class="footer__nav-list">
+            <li><a href="#inicio" class="footer__nav-link">Inicio</a></li>
+            <li><a href="#productos" class="footer__nav-link">Catálogo</a></li>
+            <li><a href="#como-funciona" class="footer__nav-link">Cómo Funciona</a></li>
+            <li><a href="#nosotros" class="footer__nav-link">Nosotros</a></li>
+            <li><a href="#faq" class="footer__nav-link">Preguntas Frecuentes</a></li>
+            <li><a href="#contacto" class="footer__nav-link">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__products">
+          <h3 class="footer__nav-title">Productos</h3>
+          <ul class="footer__nav-list">
+            <li><a href="#productos" class="footer__nav-link">Despensas Empresariales</a></li>
+            <li><a href="#productos" class="footer__nav-link">Arcones Navideños</a></li>
+            <li><a href="#productos" class="footer__nav-link">Canastas Corporativas</a></li>
+            <li><a href="#productos" class="footer__nav-link">Regalos Empresariales</a></li>
+            <li><a href="#productos" class="footer__nav-link">Kits Personalizados</a></li>
+            <li><a href="#productos" class="footer__nav-link">Pedidos Especiales</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__contact">
+          <h3 class="footer__nav-title">Contacto</h3>
+          <a href="https://wa.me/521XXXXXXXXXX" class="footer__whatsapp" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            Escríbenos por WhatsApp
+          </a>
+          <p class="footer__contact-text">Respondemos de lunes a viernes de 9:00 a 18:00 hrs.</p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2025 Despensas Sumifénix. Todos los derechos reservados.</p>
+        <p class="footer__legal">Regalos corporativos · Despensas empresariales · México</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       DRAWER MI COTIZACIÓN
+  ═══════════════════════════════════════════ -->
+  <div class="quote-overlay" id="quoteOverlay" aria-hidden="true"></div>
+  <aside class="quote-drawer" id="quoteDrawer" aria-label="Mi Cotización" aria-hidden="true" role="dialog">
+    <div class="quote-drawer__header">
+      <div class="quote-drawer__title-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+        <h2 class="quote-drawer__title">Mi Cotización</h2>
+      </div>
+      <button class="quote-drawer__close" id="quoteClose" aria-label="Cerrar Mi Cotización">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="quote-drawer__body" id="quoteBody">
+      <!-- Estado vacío -->
+      <div class="quote-empty" id="quoteEmpty">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+        <p>Tu cotización está vacía.</p>
+        <p class="quote-empty__sub">Agrega productos del catálogo para empezar.</p>
+      </div>
+      <!-- Lista de productos -->
+      <ul class="quote-list" id="quoteList" aria-label="Productos en cotización"></ul>
+    </div>
+
+    <div class="quote-drawer__footer" id="quoteFooter">
+      <button class="btn btn--ghost btn--sm quote-clear" id="quoteClear" aria-label="Vaciar toda la cotización">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+        Vaciar lista
+      </button>
+      <button class="btn btn--whatsapp quote-submit" id="quoteSubmit" aria-label="Enviar cotización por WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        Solicitar Cotización
+      </button>
+    </div>
+  </aside>
+
+  <!-- Modal Ver Contenido (producto detalle) -->
+  <div class="modal-overlay" id="modalOverlay" aria-hidden="true"></div>
+  <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <button class="modal__close" id="modalClose" aria-label="Cerrar detalle de producto">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="modal__content" id="modalContent"></div>
+  </div>
+
+  <!-- Botón flotante WhatsApp (Mobile) -->
+  <a href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20interesa%20cotizar%20sus%20productos.%20%C2%BFPodr%C3%ADan%20ayudarme%3F"
+     class="whatsapp-float"
+     id="whatsappFloat"
+     target="_blank"
+     rel="noopener"
+     aria-label="Contactar por WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    <span class="whatsapp-float__pulse" aria-hidden="true"></span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
