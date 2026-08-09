@@ -32,7 +32,7 @@ const CONFIG = {
       id:          'despensa-clasica',
       name:        'Despensa Emergencia',
       category:    'Despensas',
-      description: 'Despensa con 11 productos de primera necesidad. Incluye papel higiénico, atún, frijoles, mayonesa, galletas y más. Ideal para apoyo inmediato, programas sociales o situaciones de emergencia.',
+      description: 'Despensa con 11 productos de primera necesidad. Incluye papel higiénico, atún, frijoles, mayonesa, galletas y más. Perfecta para apoyar y reconocer a tus colaboradores.',
       items: [
         'Papel higiénico',
         'Frijoles negros refritos',
@@ -50,7 +50,7 @@ const CONFIG = {
       id:          'despensa-excelencia',
       name:        'Despensa Excelencia',
       category:    'Despensas',
-      description: 'Despensa con 12 productos de primera necesidad. Incluye atún, galletas, mayonesa, café, chocolate, papel higiénico y más. Ideal para apoyo inmediato, programas sociales o situaciones de emergencia.',
+      description: 'Despensa con 12 productos de primera necesidad. Incluye atún, galletas, mayonesa, café, chocolate, papel higiénico y más. Perfecta para apoyar y reconocer a tus colaboradores.',
       items: [
         '1 Galletas saladas Crackets 135 g.',
         '1 Ensalada de verduras La Costeña 220 g.',
