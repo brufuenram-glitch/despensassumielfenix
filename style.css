@@ -345,6 +345,14 @@ input, textarea { font-family: var(--font-primary); }
   flex-shrink: 0;
 }
 
+.logo__img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+}
+
 .logo__text {
   display: flex;
   flex-direction: column;
