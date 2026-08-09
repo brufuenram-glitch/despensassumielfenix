@@ -19,12 +19,13 @@
 'use strict';
 
 /* ─── 1. CONFIG ──────────────────────────────────────────────
-   IMPORTANTE: Reemplaza XXXXXXXXXX con el número real de WhatsApp.
-   Formato: código de país + número sin guiones ni espacios.
-   Ejemplo México: 5213312345678
+   Número oficial de WhatsApp: +52 56 1195 6294
+   Constante global — todos los botones usan este número.
 ─────────────────────────────────────────────────────────────── */
+const WHATSAPP_NUMBER = '5215611956294';
+
 const CONFIG = {
-  whatsappNumber: '521XXXXXXXXXX', // ← Reemplazar con número real
+  whatsappNumber: WHATSAPP_NUMBER,
 
   products: {
     'despensa-clasica': {
@@ -366,6 +367,9 @@ const WhatsAppBuilder = (() => {
   /**
    * Build the WhatsApp message and open the link.
    */
+  /**
+   * Open WhatsApp with a product list (multiple items).
+   */
   const send = (items) => {
     if (!items || items.length === 0) {
       alert('Agrega al menos un producto a tu cotización antes de enviar.');
@@ -375,39 +379,46 @@ const WhatsAppBuilder = (() => {
 
     const productLines = items
       .map((item) => `• ${item.name} x${item.qty}`)
-      .join('\n');
+      .join('\n\n');
 
     const message =
-      `Hola, me interesa cotizar los siguientes productos de Despensas Sumifénix:\n\n` +
+      `Hola.\n\nMe interesa cotizar los siguientes productos:\n\n` +
       `${productLines}\n\n` +
-      `¿Podrían proporcionarme información sobre disponibilidad, precios y tiempos de entrega?\n\n` +
-      `¡Gracias!`;
+      `¿Podrían enviarme información sobre precios, disponibilidad y tiempos de entrega?\n\nGracias.`;
 
-    const encoded  = encodeURIComponent(message);
-    const url      = `https://wa.me/${CONFIG.whatsappNumber}?text=${encoded}`;
+    openWhatsApp(message);
+  };
+
+  /**
+   * Open WhatsApp for a single product (from "Agregar" button).
+   */
+  const sendSingle = (productName) => {
+    const message =
+      `Hola.\n\nMe interesa cotizar el siguiente producto:\n\n` +
+      `• ${productName}\n\n` +
+      `¿Podrían enviarme información sobre precio, contenido y disponibilidad?\n\nGracias.`;
+
+    openWhatsApp(message);
+  };
+
+  /**
+   * Central function — opens WhatsApp with a given message.
+   */
+  const openWhatsApp = (message) => {
+    const encoded = encodeURIComponent(message);
+    const url     = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   /**
-   * Direct WhatsApp link (no quote needed).
+   * Build a direct WhatsApp link (for href attributes).
    */
   const buildDirect = (customText = '') => {
     const text = customText || 'Hola, me interesa cotizar sus productos. ¿Podrían ayudarme?';
-    return `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
   };
 
-  /**
-   * Update all static WhatsApp links in the DOM to use the correct number.
-   */
-  const updateAllLinks = () => {
-    const links = document.querySelectorAll('a[href*="wa.me/521XXXXXXXXXX"]');
-    links.forEach((link) => {
-      const href = link.getAttribute('href');
-      link.setAttribute('href', href.replace('521XXXXXXXXXX', CONFIG.whatsappNumber));
-    });
-  };
-
-  return { send, buildDirect, updateAllLinks };
+  return { send, sendSingle, openWhatsApp, buildDirect };
 })();
 
 /* ─── 5. PRODUCT CARDS — ADD BUTTONS ────────────────────── */
@@ -441,7 +452,7 @@ const ProductCards = (() => {
 
     QuoteState.add(id, name);
 
-    // Visual feedback
+    // Visual feedback (same design, no changes)
     const originalContent = btn.innerHTML;
     btn.innerHTML = `
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -455,6 +466,14 @@ const ProductCards = (() => {
       btn.innerHTML = originalContent;
       btn.classList.remove('is-added');
     }, 1800);
+
+    // Immediately open WhatsApp with current quote
+    const allItems = QuoteState.getAll();
+    if (allItems.length === 1 && allItems[0].qty === 1) {
+      WhatsAppBuilder.sendSingle(name);
+    } else {
+      WhatsAppBuilder.send(allItems);
+    }
   };
 
   const handleDetail = (btn) => {
@@ -504,12 +523,18 @@ const ProductModal = (() => {
       </div>
     `;
 
-    // Handle add from modal
+    // Handle add from modal (adds to quote and immediately triggers WhatsApp)
     const addBtn = elements.content().querySelector('.modal-add-from-modal');
     addBtn?.addEventListener('click', () => {
       QuoteState.add(productId, product.name);
       close();
-      QuoteDrawer.open();
+      
+      const allItems = QuoteState.getAll();
+      if (allItems.length === 1 && allItems[0].qty === 1) {
+        WhatsAppBuilder.sendSingle(product.name);
+      } else {
+        WhatsAppBuilder.send(allItems);
+      }
     });
 
     isOpen = true;
@@ -776,9 +801,6 @@ function escapeHtml(str) {
 
 /* ─── 14. INIT — Bootstrap all modules on DOM ready ─────── */
 document.addEventListener('DOMContentLoaded', () => {
-  // Update WhatsApp links with real number
-  WhatsAppBuilder.updateAllLinks();
-
   // Initialize all modules
   Header.init();
   MobileMenu.init();
