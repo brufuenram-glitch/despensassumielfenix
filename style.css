@@ -2054,10 +2054,10 @@ input, textarea { font-family: var(--font-primary); }
   .header, .whatsapp-float, .quote-drawer, .modal { display: none !important; }
 }
 
-/* ─── 23. MOBILE OPTIMIZATIONS (max-width: 767px) ────────── */
+/* ─── 23. MOBILE OPTIMIZATIONS (max-width: 991px) ────────── */
 /* Todas las reglas de este bloque afectan ÚNICAMENTE teléfonos. */
 /* El escritorio y tablet permanecen 100% intactos.            */
-@media (max-width: 767px) {
+@media (max-width: 991px) {
 
   /* ════════════════════════════════════════════════════════════
      HEADER MOBILE
