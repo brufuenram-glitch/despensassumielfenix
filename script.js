@@ -782,17 +782,7 @@ const SmoothScroll = (() => {
 /* ─── 13. CATALOG PDF BUTTON ─────────────────────────────── */
 const CatalogBtn = (() => {
   const init = () => {
-    const btn = document.getElementById('downloadCatalogBtn');
-    if (!btn) return;
-
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      // If a PDF exists, replace the href in the HTML with the real URL.
-      // For now, we redirect to WhatsApp to request the catalog.
-      const msg = 'Hola, me gustaría recibir el catálogo completo de Despensas Sumifénix. ¿Podrían enviármelo?';
-      const url = WhatsAppBuilder.buildDirect(msg);
-      window.open(url, '_blank', 'noopener,noreferrer');
-    });
+    // Interceptor removido para que el botón siga su href nativo hacia el PDF
   };
 
   return { init };
