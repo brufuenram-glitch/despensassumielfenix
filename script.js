@@ -167,20 +167,25 @@ const CONFIG = {
         '1 Canasta artesanal decorativa'
       ],
     },
-    'kit-personalizado': {
-      id:          'kit-personalizado',
-      name:        'Kit Personalizado',
-      category:    'Regalos Corporativos',
-      description: 'Diseñamos el kit ideal para tu empresa. Tú eliges los productos y nosotros lo armamos con tu identidad corporativa.',
+    'canasta-fiestas-patrias': {
+      id:          'canasta-fiestas-patrias',
+      name:        'Canasta Fiestas Patrias',
+      category:    'Canastas',
+      description: 'Canasta artesanal con dulces típicos, productos tradicionales y tequila. Ideal para celebrar las Fiestas Patrias con un detalle mexicano especial.',
       items: [
-        'Productos a tu elección',
-        'Branding con tu logo',
-        'Mensaje corporativo personalizado',
-        'Colores institucionales',
-        'Presentación exclusiva',
-        'Empaque de lujo',
-        'Garantía de calidad',
-        'Asesoría personalizada',
+        '1 Tequila reposado Don Ramón 100 ml',
+        '1 Paleta espiral grande artesanal',
+        '1 Paleta espiral chica artesanal',
+        '1 Amaranto con pepita artesanal',
+        '1 Jamoncillo artesanal',
+        '1 Cocada de naranja artesanal',
+        '1 Camote poblano artesanal',
+        '1 Jarrito con dulce de tamarindo artesanal',
+        '1 Dulce de leche artesanal',
+        '1 Palanqueta artesanal',
+        '1 Tarugos de tamarindo artesanal',
+        '1 Juguete tradicional artesanal',
+        '1 Canasta artesanal decorativa'
       ],
     },
     'regalo-clientes': {
