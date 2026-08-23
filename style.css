@@ -1019,6 +1019,24 @@ input, textarea { font-family: var(--font-primary); }
   margin-top: var(--space-1);
 }
 
+.card-product__price {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gold);
+  margin-top: var(--space-2);
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  line-height: 1;
+}
+
+.card-product__price span {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.02em;
+}
+
 .card-product__actions {
   display: flex;
   gap: var(--space-2);
