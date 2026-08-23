@@ -188,20 +188,21 @@ const CONFIG = {
         '1 Canasta artesanal decorativa'
       ],
     },
-    'regalo-clientes': {
-      id:          'regalo-clientes',
-      name:        'Regalo para Clientes',
-      category:    'Regalos Corporativos',
-      description: 'Fortalece relaciones comerciales con un detalle memorable. Selección premium para clientes que mueven tu negocio.',
+    'arcon-el-marques': {
+      id:          'arcon-el-marques',
+      name:        'Arcón El Marqués',
+      category:    'Arcones',
+      description: 'Arcón gourmet con vinos y una selección de productos premium. Una opción elegante para obsequios corporativos y ocasiones especiales.',
       items: [
-        'Selección gourmet premium',
-        'Presentación ejecutiva',
-        'Tarjeta de felicitación personalizada',
-        'Empaque con logo empresarial',
-        'Productos de marcas reconocidas',
-        'Moño y listón corporativo',
-        'Caja rígida de lujo',
-        'Entrega coordinada',
+        '1 Vino Tinto Viña Maipo 750 ml',
+        '1 Vino Blanco Viña Maipo 750 ml',
+        '1 Aceitunas Rellenas Jolca 300 g',
+        '1 Jamón Serrano Tangamanga 100 g',
+        '1 Queso Camembert 160 g',
+        '3 Chocolates Ferrero Rocher',
+        '6 Quesos Maduros Babybel 20 g',
+        '2 Palitos de Pan Quely 50 g',
+        '1 Canasta Artesanal'
       ],
     },
     'pedido-especial': {
