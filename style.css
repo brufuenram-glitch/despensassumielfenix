@@ -2408,6 +2408,22 @@ html, body {
     padding-block: 48px;
   }
 
+  /* Asegurar que el botón de WhatsApp no desborde en móvil */
+  #ctaWhatsappBtn {
+    width: calc(100% - 32px);
+    max-width: 100%;
+    margin-inline: auto;
+    box-sizing: border-box;
+    padding-left: 16px;
+    padding-right: 16px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+  }
+
   .cta-final__contact-info {
     flex-direction: column;
     gap: 12px;
