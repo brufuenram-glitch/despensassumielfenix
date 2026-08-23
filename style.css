@@ -2081,7 +2081,7 @@ html, body {
      ══════════════════════════════════════════════════════ */
   .header__inner {
     height: 64px;
-    padding-inline: 16px;
+    padding-inline: 14px;
     gap: 8px;
   }
 
@@ -2090,28 +2090,33 @@ html, body {
   }
 
   .logo__img {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 
+  /* Logo texto: visible y compacto */
   .logo__brand {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .logo__sub {
-    font-size: 0.6rem;
+    font-size: 0.58rem;
+    margin-top: 1px;
   }
 
+  /* Botón Mi Cotización */
   .btn-quote-trigger {
     display: flex;
-    padding: 8px 12px;
-    font-size: 11px;
-    gap: 5px;
+    padding: 7px 10px;
+    font-size: 10px;
+    gap: 4px;
     white-space: nowrap;
+    flex-shrink: 0;
   }
 
+  /* Ocultar botón WhatsApp extra del header para no sobrecargar */
   .header__right .btn--whatsapp {
-    display: none; /* Ocultar botón WhatsApp del header en móvil para liberar espacio */
+    display: none;
   }
 
   .hamburger {
@@ -2121,26 +2126,65 @@ html, body {
   }
 
   /* ══════════════════════════════════════════════════════
-     HERO
+     HERO — ESTRUCTURA CORRECTA EN MÓVIL
+     Texto arriba (fondo oscuro sólido) → Imagen abajo.
+     hero__bg permanece position:absolute anclado al fondo.
      ══════════════════════════════════════════════════════ */
   .hero {
+    /* La altura se define por el contenido + padding inferior para la imagen */
     min-height: auto;
     height: auto;
-    padding-top: 80px;
-    padding-bottom: 0;
+    /* Fondo oscuro sólido en la parte del texto */
+    background-color: #0a0a0a;
+    /* Padding top para el header fijo, bottom para dejar espacio a la imagen */
+    padding-top: 76px;
+    padding-bottom: 260px; /* Espacio donde se verá la foto */
+    /* Usamos flex normal del documento */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    /* Necesario para que hero__bg (absolute) sea relativo a este */
+    position: relative;
+    overflow: hidden;
   }
 
+  /* La imagen vuelve a ser fondo absoluto, anclado al fondo inferior */
+  .hero__bg {
+    position: absolute;
+    top: auto;   /* NO desde arriba */
+    bottom: 0;   /* Anclado al fondo del hero */
+    left: 0;
+    right: 0;
+    height: 300px; /* Altura de la franja de imagen visible */
+  }
+
+  .hero__bg-img {
+    object-position: center 20%;
+  }
+
+  /* Overlay: oscuro arriba (texto legible) → transparente al centro → oscuro abajo */
+  .hero__overlay {
+    background: linear-gradient(
+      180deg,
+      #0a0a0a 0%,
+      rgba(10,10,10,0.0) 35%,
+      rgba(10,10,10,0.55) 80%,
+      #0a0a0a 100%
+    );
+  }
+
+  /* El contenido (texto + botones + sociales) va sobre el fondo oscuro */
   .hero__content {
-    padding-top: 16px;
+    position: relative;
+    z-index: 2;
+    padding-top: 8px;
     padding-bottom: 0;
   }
 
+  /* Texto: ocupa todo el ancho, sin margin-bottom exagerado */
   .hero__text {
     max-width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 0;
   }
 
   .hero__eyebrow {
@@ -2149,21 +2193,27 @@ html, body {
     letter-spacing: 0.08em;
   }
 
+  /* Título COMPLETO — ambas líneas visibles */
   .hero__title {
-    font-size: clamp(1.75rem, 7vw, 2.4rem);
-    line-height: 1.1;
-    margin-bottom: 12px;
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+    line-height: 1.15;
+    margin-bottom: 14px;
+    /* Asegurar que no haya overflow ni clip */
+    overflow: visible;
+    max-width: 100%;
   }
 
+  /* Descripción COMPLETA visible */
   .hero__subtitle {
     font-size: 0.9rem;
     line-height: 1.55;
     margin-bottom: 20px;
     max-width: 100%;
     color: rgba(255, 255, 255, 0.82);
+    overflow: visible;
   }
 
-  /* Botones del hero apilados y al 100% del ancho */
+  /* Botones apilados y al 100% del ancho disponible */
   .hero__actions {
     display: flex;
     flex-direction: column;
@@ -2185,7 +2235,7 @@ html, body {
 
   /* Redes sociales del hero */
   .hero__socials {
-    margin-bottom: 16px;
+    margin-bottom: 0;
     gap: var(--space-2);
   }
 
@@ -2193,30 +2243,10 @@ html, body {
     font-size: 10px;
   }
 
-  /* Imagen de fondo hero: ocupa el ancho completo abajo */
-  .hero__bg {
-    position: relative;
-    width: 100%;
-    height: 260px;
-    margin-top: 0;
-  }
-
-  .hero__bg-img {
-    object-position: center 20%;
-  }
-
-  .hero__overlay {
-    background: linear-gradient(
-      180deg,
-      #0a0a0a 0%,
-      rgba(10,10,10,0.05) 35%,
-      rgba(10,10,10,0.4) 75%,
-      #0a0a0a 100%
-    );
-  }
-
-  /* Beneficios: compactos y apilados */
+  /* Beneficios — debajo de la zona de imagen, compactos */
   .hero__benefits {
+    position: relative;
+    z-index: 2;
     grid-template-columns: 1fr;
     gap: 8px;
     padding-top: 16px;
@@ -2225,10 +2255,10 @@ html, body {
   }
 
   .benefit-item {
-    background: rgba(15, 15, 15, 0.75);
+    background: rgba(10, 10, 10, 0.80);
     padding: 10px 14px;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.07);
     gap: 10px;
   }
 
