@@ -806,36 +806,91 @@ input, textarea { font-family: var(--font-primary); }
   z-index: 2;
 }
 
-/* ─── BANNER 2 — Nueva imagen con espacio oscuro izquierdo y productos derecha ─── */
+/* ─── BANNER 2 — PROMOCIÓN COMPRA ANTICIPADA ─── */
 
-/* La imagen se posiciona centrada (la composición original tiene productos a la derecha) */
-.hero__bg-img--banner2 {
-  object-position: center center;
+.hero__slide--promo {
+  background-color: var(--color-carbon);
 }
 
-/* Overlay: muy sutil, solo para añadir un poco de oscuridad en la zona del texto.
-   La imagen ya tiene el fondo oscuro / verde integrado. */
-.hero__overlay--banner2 {
+.hero__bg-img--promo {
+  object-position: right center;
+  opacity: 0.55; /* Opacidad reducida para no competir con el texto */
+  transform: scale(1.05); /* Ligeramente más grande para evitar bordes */
+}
+
+/* Integración de la imagen al fondo */
+.hero__overlay--promo {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(5, 10, 5, 0.45) 0%,
-    rgba(5, 10, 5, 0.20) 38%,
-    rgba(0, 0, 0, 0.00) 60%
+    rgba(10, 10, 10, 1) 0%,
+    rgba(10, 10, 10, 0.95) 35%,
+    rgba(10, 10, 10, 0.4) 65%,
+    rgba(10, 10, 10, 0.1) 100%
   );
   z-index: 1;
 }
 
-/* El contenido del Banner 2 se queda pegado al inicio (izquierda) */
-.hero__content--banner2 {
+/* Contenido del Banner Promo */
+.hero__content--promo {
   justify-content: flex-start;
   align-items: flex-start;
+  height: 100%;
 }
 
-/* El bloque de texto solo ocupa el 42% izquierdo para NO invadir los productos */
-.hero__text--banner2 {
-  max-width: 42%;
+.hero__text--promo {
+  max-width: 55%; /* Suficiente para acomodar los bloques de descuentos */
+  z-index: 2;
+}
+
+.hero__subtitle--promo {
+  font-size: 0.45em;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* Descuentos */
+.promo-discounts {
+  display: flex;
+  gap: 16px;
+  margin: 2rem 0 1rem;
+}
+
+.promo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  border-radius: 8px;
+  padding: 12px 16px;
+  min-width: 80px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.promo-item__month {
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.promo-item__percent {
+  color: var(--color-gold);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.promo-validity {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-bottom: 2.5rem;
 }
 
 
@@ -2311,23 +2366,36 @@ html, body {
     bottom: 18px;
   }
 
-  /* Banner 2 en móvil: texto al 100% del ancho, imagen reposicionada a la derecha */
-  .hero__text--banner2 {
+  /* Banner 2 (Promo) en móvil */
+  .hero__text--promo {
     max-width: 100%;
   }
-  /* En móvil, mostrar las despensas a la derecha/abajo del frame */
-  .hero__bg-img--banner2 {
-    object-position: 70% center;
+
+  .hero__bg-img--promo {
+    object-position: right center;
   }
-  /* Overlay más intenso en móvil para que el texto sea legible sobre la imagen */
-  .hero__overlay--banner2 {
+
+  .hero__overlay--promo {
     background: linear-gradient(
       180deg,
-      rgba(4, 8, 4, 0.82) 0%,
-      rgba(4, 8, 4, 0.65) 45%,
-      rgba(4, 8, 4, 0.25) 75%,
-      rgba(0, 0, 0, 0.05) 100%
+      rgba(10, 10, 10, 0.95) 0%,
+      rgba(10, 10, 10, 0.85) 50%,
+      rgba(10, 10, 10, 0.4) 80%,
+      rgba(10, 10, 10, 0.1) 100%
     );
+  }
+
+  /* Descuentos en móvil: organizar en 2x2 para no ocupar todo el ancho ni generar scroll horizontal */
+  .promo-discounts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    margin: 1.5rem 0 1rem;
+  }
+  
+  .promo-item {
+    min-width: unset;
   }
   .hero {
     /* La altura se define por el contenido + padding inferior para la imagen */
