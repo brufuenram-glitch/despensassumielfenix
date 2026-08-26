@@ -812,42 +812,66 @@ input, textarea { font-family: var(--font-primary); }
   background-color: var(--color-carbon);
 }
 
+/* Imagen despensa contenida y más pequeña para máxima nitidez */
 .hero__bg-img--promo {
-  object-position: right center;
-  opacity: 0.55; /* Opacidad reducida para no competir con el texto */
-  transform: scale(1.05); /* Ligeramente más grande para evitar bordes */
+  width: auto;
+  max-width: 36%;
+  height: auto;
+  max-height: 75%;
+  object-fit: contain;
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.65;
 }
 
-/* Integración de la imagen al fondo */
+/* No necesitamos un overlay global si la imagen es contenida y pequeña */
 .hero__overlay--promo {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(10, 10, 10, 1) 0%,
-    rgba(10, 10, 10, 0.95) 35%,
-    rgba(10, 10, 10, 0.4) 65%,
-    rgba(10, 10, 10, 0.1) 100%
-  );
-  z-index: 1;
+  display: none; 
 }
 
 /* Contenido del Banner Promo */
 .hero__content--promo {
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   height: 100%;
 }
 
 .hero__text--promo {
-  max-width: 55%; /* Suficiente para acomodar los bloques de descuentos */
+  max-width: 55%; 
   z-index: 2;
 }
 
+/* Títulos con nueva jerarquía (mucho más grandes) */
+.hero__eyebrow--promo {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero__title--promo {
+  font-size: clamp(4rem, 7vw, 5.5rem);
+  font-weight: 700;
+  color: var(--color-gold);
+  line-height: 0.9;
+  margin-bottom: 8px;
+}
+
 .hero__subtitle--promo {
-  font-size: 0.45em;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
   font-weight: 400;
-  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 24px;
+}
+
+.hero__desc--promo {
+  font-size: var(--font-size-md);
+  color: #fff;
+  max-width: 90%;
 }
 
 /* Descuentos */
@@ -2369,20 +2393,17 @@ html, body {
   /* Banner 2 (Promo) en móvil */
   .hero__text--promo {
     max-width: 100%;
+    margin-bottom: 30vh; /* Espacio para que la imagen quepa abajo */
   }
 
+  /* Imagen en móvil: centrada abajo, max 65% del ancho */
   .hero__bg-img--promo {
-    object-position: right center;
-  }
-
-  .hero__overlay--promo {
-    background: linear-gradient(
-      180deg,
-      rgba(10, 10, 10, 0.95) 0%,
-      rgba(10, 10, 10, 0.85) 50%,
-      rgba(10, 10, 10, 0.4) 80%,
-      rgba(10, 10, 10, 0.1) 100%
-    );
+    max-width: 65%;
+    max-height: 35%;
+    right: 50%;
+    top: auto;
+    bottom: 4rem;
+    transform: translateX(50%);
   }
 
   /* Descuentos en móvil: organizar en 2x2 para no ocupar todo el ancho ni generar scroll horizontal */
