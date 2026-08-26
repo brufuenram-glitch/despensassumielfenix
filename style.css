@@ -806,16 +806,38 @@ input, textarea { font-family: var(--font-primary); }
   z-index: 2;
 }
 
-/* Banner 2: lighter left-side overlay so image shows through on the right */
-.hero__overlay--banner2 {
-  background: linear-gradient(
-    100deg,
-    rgba(8, 8, 8, 0.88) 0%,
-    rgba(8, 8, 8, 0.65) 40%,
-    rgba(8, 8, 8, 0.10) 70%,
-    rgba(8, 8, 8, 0.05) 100%
-  ) !important;
+/* ─── BANNER 2 — Nueva imagen con espacio oscuro izquierdo y productos derecha ─── */
+
+/* La imagen se posiciona centrada (la composición original tiene productos a la derecha) */
+.hero__bg-img--banner2 {
+  object-position: center center;
 }
+
+/* Overlay: muy sutil, solo para añadir un poco de oscuridad en la zona del texto.
+   La imagen ya tiene el fondo oscuro / verde integrado. */
+.hero__overlay--banner2 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(5, 10, 5, 0.45) 0%,
+    rgba(5, 10, 5, 0.20) 38%,
+    rgba(0, 0, 0, 0.00) 60%
+  );
+  z-index: 1;
+}
+
+/* El contenido del Banner 2 se queda pegado al inicio (izquierda) */
+.hero__content--banner2 {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* El bloque de texto solo ocupa el 42% izquierdo para NO invadir los productos */
+.hero__text--banner2 {
+  max-width: 42%;
+}
+
 
 /* ── Carousel Arrow Controls ── */
 .carousel-control {
@@ -2287,6 +2309,25 @@ html, body {
   /* Indicadores en móvil */
   .carousel-indicators {
     bottom: 18px;
+  }
+
+  /* Banner 2 en móvil: texto al 100% del ancho, imagen reposicionada a la derecha */
+  .hero__text--banner2 {
+    max-width: 100%;
+  }
+  /* En móvil, mostrar las despensas a la derecha/abajo del frame */
+  .hero__bg-img--banner2 {
+    object-position: 70% center;
+  }
+  /* Overlay más intenso en móvil para que el texto sea legible sobre la imagen */
+  .hero__overlay--banner2 {
+    background: linear-gradient(
+      180deg,
+      rgba(4, 8, 4, 0.82) 0%,
+      rgba(4, 8, 4, 0.65) 45%,
+      rgba(4, 8, 4, 0.25) 75%,
+      rgba(0, 0, 0, 0.05) 100%
+    );
   }
   .hero {
     /* La altura se define por el contenido + padding inferior para la imagen */
