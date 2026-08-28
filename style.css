@@ -812,23 +812,33 @@ input, textarea { font-family: var(--font-primary); }
   background-color: var(--color-carbon);
 }
 
-/* Imagen despensa contenida y más pequeña para máxima nitidez */
+/* Imagen corporativa como fondo completo — la imagen ya tiene zona oscura a la izquierda */
 .hero__bg-img--promo {
-  width: auto;
-  max-width: 36%;
-  height: auto;
-  max-height: 75%;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
   position: absolute;
-  right: 6%;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0.65;
+  inset: 0;
+  opacity: 1;
+  transform: none;
+  max-width: none;
+  max-height: none;
 }
 
-/* No necesitamos un overlay global si la imagen es contenida y pequeña */
+/* Overlay sutil de izquierda a derecha para legibilidad del texto */
 .hero__overlay--promo {
-  display: none; 
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(8, 12, 8, 0.88) 0%,
+    rgba(8, 12, 8, 0.72) 40%,
+    rgba(8, 12, 8, 0.25) 65%,
+    rgba(8, 12, 8, 0.05) 100%
+  );
+  z-index: 1;
 }
 
 /* Contenido del Banner Promo */
@@ -839,38 +849,32 @@ input, textarea { font-family: var(--font-primary); }
 }
 
 .hero__text--promo {
-  max-width: 55%; 
+  max-width: 52%;
   z-index: 2;
 }
 
-/* Títulos con nueva jerarquía (mucho más grandes) */
-.hero__eyebrow--promo {
-  font-size: clamp(2rem, 4vw, 3rem);
+/* ANTICIPA AHORA — mismo tamaño, mismo peso, solo difieren en color */
+.hero__title--promo {
+  font-size: clamp(2.8rem, 5.5vw, 4.5rem);
   font-weight: 700;
   color: #fff;
-  letter-spacing: 2px;
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
 }
 
-.hero__title--promo {
-  font-size: clamp(4rem, 7vw, 5.5rem);
-  font-weight: 700;
-  color: var(--color-gold);
-  line-height: 0.9;
-  margin-bottom: 8px;
-}
-
+/* Y ASEGURA LO MEJOR — subtítulo con buena presencia */
 .hero__subtitle--promo {
-  font-size: clamp(1.3rem, 2vw, 1.6rem);
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 24px;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 600;
+  color: var(--color-gold);
+  letter-spacing: 1px;
+  margin-bottom: 20px;
 }
 
 .hero__desc--promo {
   font-size: var(--font-size-md);
-  color: #fff;
+  color: rgba(255, 255, 255, 0.9);
   max-width: 90%;
 }
 
@@ -2393,17 +2397,32 @@ html, body {
   /* Banner 2 (Promo) en móvil */
   .hero__text--promo {
     max-width: 100%;
-    margin-bottom: 30vh; /* Espacio para que la imagen quepa abajo */
+    margin-bottom: 0;
   }
 
-  /* Imagen en móvil: centrada abajo, max 65% del ancho */
+  /* Imagen corporativa de fondo en móvil: cubrir + overlay más fuerte */
   .hero__bg-img--promo {
-    max-width: 65%;
-    max-height: 35%;
-    right: 50%;
-    top: auto;
-    bottom: 4rem;
-    transform: translateX(50%);
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    inset: 0;
+    right: auto;
+    top: 0;
+    bottom: auto;
+    transform: none;
+    object-position: 70% center;
+  }
+
+  .hero__overlay--promo {
+    display: block;
+    background: linear-gradient(
+      180deg,
+      rgba(8, 12, 8, 0.92) 0%,
+      rgba(8, 12, 8, 0.85) 50%,
+      rgba(8, 12, 8, 0.6) 80%,
+      rgba(8, 12, 8, 0.3) 100%
+    );
   }
 
   /* Descuentos en móvil: organizar en 2x2 para no ocupar todo el ancho ni generar scroll horizontal */
