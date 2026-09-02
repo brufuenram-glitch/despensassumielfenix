@@ -2526,7 +2526,7 @@ html, body {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center top !important;
+    object-position: 65% 15% !important;
     opacity: 0.85 !important;
     transform: none !important;
     max-width: none !important;
@@ -2652,7 +2652,7 @@ html, body {
   }
 
   .hero-mobile__slide--promo .hero-mobile__bg-img {
-    object-position: center top !important;
+    object-position: 65% center !important;
     opacity: 0.85 !important;
   }
 
