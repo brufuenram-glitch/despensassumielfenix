@@ -2455,9 +2455,8 @@ html, body {
      ══════════════════════════════════════════════════════ */
   .hero-mobile {
     margin-top: 60px !important;
-    min-height: calc(100vh - 60px) !important;
-    min-height: calc(100svh - 60px) !important;
     height: auto !important;
+    min-height: auto !important;
     padding: 0 !important;
     margin-bottom: 0 !important;
     display: flex !important;
@@ -2469,9 +2468,8 @@ html, body {
 
   .hero-mobile__carousel {
     position: relative !important;
-    flex: 1 !important;
     width: 100% !important;
-    height: 100% !important;
+    height: auto !important;
     overflow: hidden !important;
     display: flex !important;
     flex-direction: column !important;
@@ -2480,8 +2478,7 @@ html, body {
   .hero-mobile__track {
     display: flex !important;
     width: 100% !important;
-    height: 100% !important;
-    flex: 1 !important;
+    height: auto !important;
     transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1) !important;
   }
 
@@ -2489,13 +2486,13 @@ html, body {
     flex: 0 0 100% !important;
     width: 100% !important;
     max-width: 100% !important;
-    height: 100% !important;
-    min-height: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: center !important;
+    justify-content: flex-end !important;
     align-items: stretch !important;
-    padding: 24px 20px 48px 20px !important;
+    padding: 160px 18px 36px 18px !important;
     position: relative !important;
     box-sizing: border-box !important;
   }
@@ -2510,7 +2507,7 @@ html, body {
     height: auto !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: center !important;
+    justify-content: flex-end !important;
     text-align: left !important;
   }
 
@@ -2520,6 +2517,7 @@ html, body {
     width: 100% !important;
     height: 100% !important;
     z-index: 0 !important;
+    overflow: hidden !important;
   }
 
   .hero-mobile__bg-img {
@@ -2528,8 +2526,8 @@ html, body {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center 30% !important;
-    opacity: 0.25 !important;
+    object-position: center top !important;
+    opacity: 0.85 !important;
     transform: none !important;
     max-width: none !important;
     max-height: none !important;
@@ -2542,9 +2540,11 @@ html, body {
     display: block !important;
     background: linear-gradient(
       180deg,
-      rgba(8, 10, 8, 0.90) 0%,
-      rgba(8, 10, 8, 0.78) 45%,
-      rgba(8, 10, 8, 0.96) 100%
+      rgba(8, 10, 8, 0.15) 0%,
+      rgba(8, 10, 8, 0.35) 25%,
+      rgba(8, 10, 8, 0.82) 48%,
+      rgba(8, 10, 8, 0.98) 68%,
+      rgba(8, 10, 8, 1) 100%
     ) !important;
     z-index: 1 !important;
   }
@@ -2561,26 +2561,29 @@ html, body {
     opacity: 1 !important;
     animation: none !important;
     transform: none !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
   }
 
   .hero-mobile__title {
-    font-size: clamp(20px, 5.8vw, 24px) !important;
-    line-height: 1.25 !important;
+    font-size: clamp(19px, 5.4vw, 23px) !important;
+    line-height: 1.28 !important;
     font-weight: 800 !important;
     color: #ffffff !important;
     margin-bottom: 10px !important;
-    letter-spacing: -0.02em !important;
+    letter-spacing: -0.015em !important;
     max-width: 100% !important;
     opacity: 1 !important;
     animation: none !important;
     transform: none !important;
+    text-wrap: balance !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
   }
 
   .hero-mobile__subtitle {
     font-size: 13px !important;
     line-height: 1.45 !important;
-    color: rgba(255, 255, 255, 0.80) !important;
-    margin-bottom: 18px !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    margin-bottom: 16px !important;
     max-width: 100% !important;
     opacity: 1 !important;
     animation: none !important;
@@ -2592,7 +2595,7 @@ html, body {
     flex-direction: column !important;
     gap: 9px !important;
     width: 100% !important;
-    margin-bottom: 16px !important;
+    margin-bottom: 14px !important;
     opacity: 1 !important;
     animation: none !important;
     transform: none !important;
@@ -2626,7 +2629,7 @@ html, body {
 
   .hero-mobile__socials-label {
     font-size: 9.5px !important;
-    color: rgba(255, 255, 255, 0.45) !important;
+    color: rgba(255, 255, 255, 0.50) !important;
     text-transform: uppercase !important;
     letter-spacing: 0.05em !important;
     font-weight: 600 !important;
@@ -2648,8 +2651,13 @@ html, body {
     background-color: #080c08 !important;
   }
 
+  .hero-mobile__slide--promo .hero-mobile__bg-img {
+    object-position: center top !important;
+    opacity: 0.85 !important;
+  }
+
   .hero-mobile__title--promo {
-    font-size: clamp(24px, 7vw, 28px) !important;
+    font-size: clamp(23px, 6.8vw, 27px) !important;
     font-weight: 800 !important;
     line-height: 1.15 !important;
     color: #ffffff !important;
@@ -2658,6 +2666,7 @@ html, body {
     opacity: 1 !important;
     animation: none !important;
     transform: none !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
   }
 
   .hero-mobile__subtitle--promo {
@@ -2669,13 +2678,14 @@ html, body {
     opacity: 1 !important;
     animation: none !important;
     transform: none !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
   }
 
   .hero-mobile__desc--promo {
     font-size: 12.5px !important;
     line-height: 1.4 !important;
-    color: rgba(255, 255, 255, 0.82) !important;
-    margin-bottom: 14px !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    margin-bottom: 12px !important;
     max-width: 100% !important;
     opacity: 1 !important;
     animation: none !important;
@@ -2694,8 +2704,8 @@ html, body {
   }
 
   .promo-item {
-    background: rgba(201, 162, 39, 0.08) !important;
-    border: 1px solid rgba(201, 162, 39, 0.32) !important;
+    background: rgba(201, 162, 39, 0.10) !important;
+    border: 1px solid rgba(201, 162, 39, 0.38) !important;
     border-radius: 8px !important;
     padding: 8px 10px !important;
     text-align: center !important;
@@ -2722,12 +2732,12 @@ html, body {
     font-size: 11px !important;
     color: rgba(255, 255, 255, 0.50) !important;
     font-style: italic !important;
-    margin-bottom: 14px !important;
+    margin-bottom: 12px !important;
     text-align: center !important;
   }
 
   .carousel-indicators--mobile {
-    bottom: 12px !important;
+    bottom: 8px !important;
     z-index: 10 !important;
     gap: 6px !important;
     display: flex !important;
