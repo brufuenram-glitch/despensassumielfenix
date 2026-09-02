@@ -289,8 +289,8 @@ const QuoteState = (() => {
 /* ─── 3. QUOTE DRAWER ────────────────────────────────────── */
 const QuoteDrawer = (() => {
   const elements = {
-    trigger:   () => document.getElementById('quoteTrigger'),
-    badge:     () => document.getElementById('quoteBadge'),
+    triggers:  () => document.querySelectorAll('#quoteTrigger, #quoteTriggerMobile, .btn-quote-trigger'),
+    badges:    () => document.querySelectorAll('#quoteBadge, #quoteBadgeMobile, .quote-badge'),
     overlay:   () => document.getElementById('quoteOverlay'),
     drawer:    () => document.getElementById('quoteDrawer'),
     close:     () => document.getElementById('quoteClose'),
@@ -305,21 +305,21 @@ const QuoteDrawer = (() => {
 
   const open = () => {
     isOpen = true;
-    elements.overlay().classList.add('is-open');
-    elements.drawer().classList.add('is-open');
-    elements.drawer().setAttribute('aria-hidden', 'false');
-    elements.trigger()?.setAttribute('aria-expanded', 'true');
+    elements.overlay()?.classList.add('is-open');
+    elements.drawer()?.classList.add('is-open');
+    elements.drawer()?.setAttribute('aria-hidden', 'false');
+    elements.triggers().forEach(t => t.setAttribute('aria-expanded', 'true'));
     // Trap focus
-    elements.drawer().focus?.();
+    elements.drawer()?.focus?.();
     document.body.style.overflow = 'hidden';
   };
 
   const close = () => {
     isOpen = false;
-    elements.overlay().classList.remove('is-open');
-    elements.drawer().classList.remove('is-open');
-    elements.drawer().setAttribute('aria-hidden', 'true');
-    elements.trigger()?.setAttribute('aria-expanded', 'false');
+    elements.overlay()?.classList.remove('is-open');
+    elements.drawer()?.classList.remove('is-open');
+    elements.drawer()?.setAttribute('aria-hidden', 'true');
+    elements.triggers().forEach(t => t.setAttribute('aria-expanded', 'false'));
     document.body.style.overflow = '';
   };
 
@@ -329,27 +329,29 @@ const QuoteDrawer = (() => {
    * Re-render the quote list from current state.
    */
   const render = (items) => {
-    const badge  = elements.badge();
+    const badges = elements.badges();
     const empty  = elements.empty();
     const list   = elements.list();
     const footer = elements.footer();
 
     const count = items.reduce((a, i) => a + i.qty, 0);
 
-    // Update badge
-    badge.textContent = count;
-    if (count > 0) {
-      badge.classList.add('bump');
-      setTimeout(() => badge.classList.remove('bump'), 400);
-    }
+    // Update all badges (desktop and mobile)
+    badges.forEach(badge => {
+      badge.textContent = count;
+      if (count > 0) {
+        badge.classList.add('bump');
+        setTimeout(() => badge.classList.remove('bump'), 400);
+      }
+    });
 
     // Toggle empty/list view
     const hasItems = items.length > 0;
-    empty.style.display  = hasItems ? 'none' : 'flex';
-    list.style.display   = hasItems ? 'flex' : 'none';
-    footer.style.display = hasItems ? 'flex' : 'none';
+    if (empty)  empty.style.display  = hasItems ? 'none' : 'flex';
+    if (list)   list.style.display   = hasItems ? 'flex' : 'none';
+    if (footer) footer.style.display = hasItems ? 'flex' : 'none';
 
-    if (!hasItems) return;
+    if (!hasItems || !list) return;
 
     // Render each item
     list.innerHTML = items.map((item) => `
@@ -385,24 +387,26 @@ const QuoteDrawer = (() => {
   };
 
   const init = () => {
-    // Trigger button
-    elements.trigger()?.addEventListener('click', toggle);
+    // Trigger buttons (both desktop and mobile)
+    elements.triggers().forEach(trigger => {
+      trigger.addEventListener('click', toggle);
+    });
 
     // Close button
-    elements.close().addEventListener('click', close);
+    elements.close()?.addEventListener('click', close);
 
     // Overlay click
-    elements.overlay().addEventListener('click', close);
+    elements.overlay()?.addEventListener('click', close);
 
     // Clear button
-    elements.clear().addEventListener('click', () => {
+    elements.clear()?.addEventListener('click', () => {
       if (confirm('¿Vaciar toda la lista de cotización?')) {
         QuoteState.clear();
       }
     });
 
     // Submit (WhatsApp)
-    elements.submit().addEventListener('click', () => {
+    elements.submit()?.addEventListener('click', () => {
       WhatsAppBuilder.send(QuoteState.getAll());
     });
 
@@ -658,33 +662,45 @@ const Header = (() => {
 /* ─── 8. MOBILE MENU ─────────────────────────────────────── */
 const MobileMenu = (() => {
   const init = () => {
-    const hamburger = document.getElementById('hamburger');
-    const menu      = document.getElementById('mobileMenu');
-    if (!hamburger || !menu) return;
+    const hamburgers = document.querySelectorAll('#hamburger, #hamburgerMobile, .hamburger');
+    const menus      = document.querySelectorAll('#mobileMenu, #mobileMenuMobile, .mobile-menu');
+    if (!hamburgers.length || !menus.length) return;
 
     let isOpen = false;
 
     const open  = () => {
       isOpen = true;
-      hamburger.classList.add('is-open');
-      menu.classList.add('is-open');
-      hamburger.setAttribute('aria-expanded', 'true');
-      menu.setAttribute('aria-hidden', 'false');
+      hamburgers.forEach(h => {
+        h.classList.add('is-open');
+        h.setAttribute('aria-expanded', 'true');
+      });
+      menus.forEach(m => {
+        m.classList.add('is-open');
+        m.setAttribute('aria-hidden', 'false');
+      });
     };
 
     const close = () => {
       isOpen = false;
-      hamburger.classList.remove('is-open');
-      menu.classList.remove('is-open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-hidden', 'true');
+      hamburgers.forEach(h => {
+        h.classList.remove('is-open');
+        h.setAttribute('aria-expanded', 'false');
+      });
+      menus.forEach(m => {
+        m.classList.remove('is-open');
+        m.setAttribute('aria-hidden', 'true');
+      });
     };
 
-    hamburger.addEventListener('click', () => (isOpen ? close() : open()));
+    hamburgers.forEach(h => {
+      h.addEventListener('click', () => (isOpen ? close() : open()));
+    });
 
     // Close on link click
-    menu.querySelectorAll('[data-close-menu]').forEach((link) => {
-      link.addEventListener('click', close);
+    menus.forEach(menu => {
+      menu.querySelectorAll('[data-close-menu]').forEach((link) => {
+        link.addEventListener('click', close);
+      });
     });
 
     // Close on ESC
@@ -871,14 +887,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ═══════════════════════════════════════════════════════════
-   HERO CAROUSEL
+   HERO CAROUSEL FACTORY (Desktop & Mobile Independent)
    - Auto-advance: 3500 ms
-   - Slide transition: 700 ms (CSS handles the animation)
-   - Arrow controls: prev / next
-   - Dot indicators
+   - Slide transition: 600 ms
+   - Arrow controls & Dot indicators
    - Touch swipe support
    ═══════════════════════════════════════════════════════════ */
-const HeroCarousel = (() => {
+const createCarousel = ({ carouselId, trackId, prevBtnId, nextBtnId, indicatorsId, slideClass }) => {
   const AUTO_DELAY = 3500;
   const SWIPE_THRESHOLD = 50;
 
@@ -888,13 +903,14 @@ const HeroCarousel = (() => {
   let touchStartX = 0;
   let isTransitioning = false;
 
-  const track = document.getElementById('heroTrack');
-  const prevBtn = document.getElementById('heroPrevBtn');
-  const nextBtn = document.getElementById('heroNextBtn');
-  const indicators = document.getElementById('heroIndicators');
+  const carousel = document.getElementById(carouselId);
+  const track = document.getElementById(trackId);
+  const prevBtn = prevBtnId ? document.getElementById(prevBtnId) : null;
+  const nextBtn = nextBtnId ? document.getElementById(nextBtnId) : null;
+  const indicators = indicatorsId ? document.getElementById(indicatorsId) : null;
 
   function goTo(index) {
-    if (isTransitioning) return;
+    if (isTransitioning || !track) return;
     isTransitioning = true;
 
     // Clamp / wrap
@@ -911,8 +927,7 @@ const HeroCarousel = (() => {
       });
     }
 
-    // Allow next transition after animation ends
-    setTimeout(() => { isTransitioning = false; }, 720);
+    setTimeout(() => { isTransitioning = false; }, 620);
   }
 
   function next() { goTo(current + 1); }
@@ -928,9 +943,9 @@ const HeroCarousel = (() => {
   }
 
   function init() {
-    if (!track) return; // No carousel on this page
+    if (!track) return;
 
-    const slides = track.querySelectorAll('.hero__slide');
+    const slides = track.querySelectorAll(slideClass || '.hero__slide, .hero-mobile__slide');
     total = slides.length;
     if (total <= 1) return;
 
@@ -950,7 +965,6 @@ const HeroCarousel = (() => {
     }
 
     // Touch swipe
-    const carousel = document.getElementById('heroCarousel');
     if (carousel) {
       carousel.addEventListener('touchstart', (e) => {
         touchStartX = e.touches[0].clientX;
@@ -963,17 +977,40 @@ const HeroCarousel = (() => {
           startAuto();
         }
       }, { passive: true });
-    }
 
-    // Pause on hover (desktop UX)
-    if (carousel) {
+      // Pause on hover
       carousel.addEventListener('mouseenter', stopAuto);
       carousel.addEventListener('mouseleave', startAuto);
     }
 
-    // Start
     startAuto();
   }
+
+  return { init, next, prev, goTo };
+};
+
+const HeroCarousel = (() => {
+  const init = () => {
+    // Desktop Carousel
+    const desktopCarousel = createCarousel({
+      carouselId: 'heroCarousel',
+      trackId: 'heroTrack',
+      prevBtnId: 'heroPrevBtn',
+      nextBtnId: 'heroNextBtn',
+      indicatorsId: 'heroIndicators',
+      slideClass: '.hero__slide'
+    });
+    desktopCarousel.init();
+
+    // Mobile Carousel
+    const mobileCarousel = createCarousel({
+      carouselId: 'heroMobileCarousel',
+      trackId: 'heroMobileTrack',
+      indicatorsId: 'heroMobileIndicators',
+      slideClass: '.hero-mobile__slide'
+    });
+    mobileCarousel.init();
+  };
 
   return { init };
 })();
