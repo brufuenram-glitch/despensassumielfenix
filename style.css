@@ -707,30 +707,31 @@ input, textarea { font-family: var(--font-primary); }
   text-transform: uppercase;
 }
 
-/* Benefits row */
-.hero__benefits {
+/* ─── 8b. BENEFITS STRIP (Barra de beneficios) ──────────── */
+.benefits-strip {
+  background-color: #0c0f0c;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 22px 0;
   position: relative;
-  z-index: var(--z-base);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-3);
-  padding-top: var(--space-8);
-  border-top: 1px solid rgba(255, 255, 255, 0.10);
-  opacity: 0;
-  animation: fadeInUp 0.7s 0.95s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  z-index: 5;
 }
 
-@media (min-width: 600px) {
-  .hero__benefits { grid-template-columns: repeat(4, 1fr); }
+.benefits-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  align-items: center;
 }
 
 .benefit-item {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-3);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  color: rgba(255, 255, 255, 0.85);
+  font-weight: var(--font-weight-semibold);
+  color: rgba(255, 255, 255, 0.9);
+  justify-content: center;
 }
 
 .benefit-item__icon {
@@ -2313,289 +2314,540 @@ html, body {
   }
 
   /* ══════════════════════════════════════════════════════
-     HEADER
+     HEADER MÓVIL
+     Limpio, profesional, sin sobrecarga
      ══════════════════════════════════════════════════════ */
+  .header {
+    background: rgba(10, 12, 10, 0.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
   .header__inner {
-    height: 64px;
+    height: 60px;
     padding-inline: 14px;
     gap: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .header.scrolled .header__inner {
     height: 56px;
   }
 
-  .logo__img {
-    width: 36px;
-    height: 36px;
+  .header__logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    flex-shrink: 0;
+    max-width: 55%;
   }
 
-  /* Logo texto: visible y compacto */
+  .logo__img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
+
+  .logo__text {
+    display: flex;
+    flex-direction: column;
+  }
+
   .logo__brand {
     font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
   }
 
   .logo__sub {
-    font-size: 0.58rem;
+    font-size: 0.55rem;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     margin-top: 1px;
+    display: block;
+    white-space: nowrap;
   }
 
-  /* Botón Mi Cotización */
-  .btn-quote-trigger {
+  .header__right {
     display: flex;
-    padding: 7px 10px;
-    font-size: 10px;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Ocultar elementos sobrantes del header en móvil */
+  .header__socials,
+  .header__nav,
+  .header__right .btn--whatsapp {
+    display: none !important;
+  }
+
+  /* Botón Mi Cotización: compacto y touch-friendly */
+  .btn-quote-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    font-size: 11px;
     gap: 4px;
+    border-radius: 9999px;
+    height: 36px;
+    min-height: 36px;
     white-space: nowrap;
     flex-shrink: 0;
   }
 
-  /* Ocultar botón WhatsApp extra del header para no sobrecargar */
-  .header__right .btn--whatsapp {
-    display: none;
-  }
-
   .hamburger {
-    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    padding: 6px;
     margin-right: -4px;
     flex-shrink: 0;
   }
 
   /* ══════════════════════════════════════════════════════
-     HERO — ESTRUCTURA CORRECTA EN MÓVIL (CARRUSEL)
-     Texto arriba (fondo oscuro sólido) → Imagen abajo.
-     hero__bg permanece position:absolute anclado al fondo.
+     HERO & CARRUSEL MÓVIL (DISEÑADO NATIVAMENTE PARA TELÉFONOS)
      ══════════════════════════════════════════════════════ */
-  /* Carousel: ocupa el hero completo */
-  .hero__carousel {
-    position: absolute;
-    inset: 0;
-  }
-  .hero__track {
-    height: 100%;
-  }
-  .hero__slide {
-    min-height: 100%;
-  }
-
-  /* Flechas más pequeñas en móvil */
-  .carousel-control {
-    width: 36px;
-    height: 36px;
-    top: auto;
-    bottom: 72px; /* encima de los dots */
-    transform: none;
-  }
-  .carousel-control--prev { left: 16px; bottom: auto; top: 50%; transform: translateY(-50%); }
-  .carousel-control--next { right: 16px; bottom: auto; top: 50%; transform: translateY(-50%); }
-
-  /* Indicadores en móvil */
-  .carousel-indicators {
-    bottom: 18px;
-  }
-
-  /* Banner 2 (Promo) en móvil */
-  .hero__text--promo {
-    max-width: 100%;
-    margin-bottom: 0;
-  }
-
-  /* Imagen corporativa de fondo en móvil: cubrir + overlay más fuerte */
-  .hero__bg-img--promo {
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    max-height: none;
-    inset: 0;
-    right: auto;
-    top: 0;
-    bottom: auto;
-    transform: none;
-    object-position: 70% center;
-  }
-
-  .hero__overlay--promo {
-    display: block;
-    background: linear-gradient(
-      180deg,
-      rgba(8, 12, 8, 0.92) 0%,
-      rgba(8, 12, 8, 0.85) 50%,
-      rgba(8, 12, 8, 0.6) 80%,
-      rgba(8, 12, 8, 0.3) 100%
-    );
-  }
-
-  /* Descuentos en móvil: organizar en 2x2 para no ocupar todo el ancho ni generar scroll horizontal */
-  .promo-discounts {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    width: 100%;
-    margin: 1.5rem 0 1rem;
-  }
-  
-  .promo-item {
-    min-width: unset;
-  }
   .hero {
-    /* La altura se define por el contenido + padding inferior para la imagen */
     min-height: auto;
     height: auto;
-    /* Fondo oscuro sólido en la parte del texto */
-    background-color: #0a0a0a;
-    /* Padding top para el header fijo, bottom para dejar espacio a la imagen */
-    padding-top: 76px;
-    padding-bottom: 260px; /* Espacio donde se verá la foto */
-    /* Usamos flex normal del documento */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    /* Necesario para que hero__bg (absolute) sea relativo a este */
+    padding: 0;
     position: relative;
+    overflow: hidden;
+    background: #080a08;
+    display: block;
+  }
+
+  .hero__carousel {
+    position: relative;
+    width: 100%;
     overflow: hidden;
   }
 
-  /* La imagen vuelve a ser fondo absoluto, anclado al fondo inferior */
+  .hero__track {
+    display: flex;
+    width: 100%;
+    height: auto;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Cada slide tiene flujo natural de altura para que nada se corte */
+  .hero__slide {
+    flex: 0 0 100%;
+    width: 100%;
+    min-height: auto;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 76px 18px 36px 18px; /* 76px arriba para librar el header de 60px */
+  }
+
   .hero__bg {
     position: absolute;
-    top: auto;   /* NO desde arriba */
-    bottom: 0;   /* Anclado al fondo del hero */
-    left: 0;
-    right: 0;
-    height: 300px; /* Altura de la franja de imagen visible */
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .hero__bg-img {
-    object-position: center 20%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.35;
   }
 
-  /* Overlay: oscuro arriba (texto legible) → transparente al centro → oscuro abajo */
   .hero__overlay {
+    position: absolute;
+    inset: 0;
     background: linear-gradient(
       180deg,
-      #0a0a0a 0%,
-      rgba(10,10,10,0.0) 35%,
-      rgba(10,10,10,0.55) 80%,
-      #0a0a0a 100%
+      rgba(8, 10, 8, 0.90) 0%,
+      rgba(8, 10, 8, 0.70) 50%,
+      rgba(8, 10, 8, 0.95) 100%
     );
   }
 
-  /* El contenido (texto + botones + sociales) va sobre el fondo oscuro */
   .hero__content {
     position: relative;
     z-index: 2;
-    padding-top: 8px;
-    padding-bottom: 0;
+    width: 100%;
+    padding: 0;
+    text-align: left;
   }
 
-  /* Texto: ocupa todo el ancho, sin margin-bottom exagerado */
   .hero__text {
     max-width: 100%;
     margin-bottom: 0;
   }
 
+  /* Eyebrow */
   .hero__eyebrow {
     font-size: 10px;
-    margin-bottom: 10px;
-    letter-spacing: 0.08em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 8px;
+    display: block;
   }
 
-  /* Título COMPLETO — ambas líneas visibles */
+  /* Título Banner 1 */
   .hero__title {
-    font-size: clamp(1.75rem, 7vw, 2.25rem);
-    line-height: 1.15;
-    margin-bottom: 14px;
-    /* Asegurar que no haya overflow ni clip */
-    overflow: visible;
+    font-size: clamp(1.35rem, 5.2vw, 1.7rem);
+    line-height: 1.25;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 10px;
     max-width: 100%;
   }
 
-  /* Descripción COMPLETA visible */
+  /* Subtítulo Banner 1 */
   .hero__subtitle {
-    font-size: 0.9rem;
-    line-height: 1.55;
-    margin-bottom: 20px;
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.78);
+    margin-bottom: 18px;
     max-width: 100%;
-    color: rgba(255, 255, 255, 0.82);
-    overflow: visible;
   }
 
-  /* Botones apilados y al 100% del ancho disponible */
+  /* Botones del Hero */
   .hero__actions {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    gap: 8px;
     width: 100%;
-    gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
   }
 
   .hero__actions .btn {
     width: 100%;
-    min-height: 50px;
+    min-height: 46px;
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    font-size: 0.95rem;
-    padding: 14px 20px;
-    white-space: nowrap;
+    gap: 8px;
+    border-radius: 9999px;
     box-sizing: border-box;
+    text-align: center;
   }
 
-  /* Redes sociales del hero */
+  /* Redes sociales en el hero móvil: fila compacta */
   .hero__socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 4px;
     margin-bottom: 0;
-    gap: var(--space-2);
   }
 
   .hero__socials-label {
-    font-size: 10px;
+    font-size: 9.5px;
+    color: rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
   }
 
-  /* Beneficios — debajo de la zona de imagen, compactos */
-  .hero__benefits {
-    position: relative;
-    z-index: 2;
-    grid-template-columns: 1fr;
-    gap: 8px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-bottom: 24px;
-  }
-
-  .benefit-item {
-    background: rgba(10, 10, 10, 0.80);
-    padding: 10px 14px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    gap: 10px;
+  .hero__socials .social-icon {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
   }
 
   /* ══════════════════════════════════════════════════════
-     SECCIÓN "ATENDEMOS A" (clients strip)
+     BANNER 2 (PROMO COMPRA ANTICIPADA) MÓVIL
+     ══════════════════════════════════════════════════════ */
+  .hero__slide--promo {
+    background-color: #080c08;
+  }
+
+  .hero__bg-img--promo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.30;
+  }
+
+  .hero__overlay--promo {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(8, 12, 8, 0.92) 0%,
+      rgba(8, 12, 8, 0.75) 50%,
+      rgba(8, 12, 8, 0.95) 100%
+    );
+  }
+
+  .hero__text--promo {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  .hero__title--promo {
+    font-size: clamp(1.6rem, 6.5vw, 2rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .hero__subtitle--promo {
+    font-size: clamp(1rem, 3.8vw, 1.2rem);
+    font-weight: 700;
+    color: var(--color-gold);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .hero__desc--promo {
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.82);
+    margin-bottom: 14px;
+    max-width: 100%;
+  }
+
+  /* Cuadrícula 2x2 compacta para los 4 descuentos */
+  .promo-discounts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 8px;
+    width: 100%;
+    margin: 0 0 10px 0;
+  }
+
+  .promo-item {
+    background: rgba(201, 162, 39, 0.06);
+    border: 1px solid rgba(201, 162, 39, 0.28);
+    border-radius: 6px;
+    padding: 6px 8px;
+    text-align: center;
+    min-width: unset;
+  }
+
+  .promo-item__month {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 2px;
+  }
+
+  .promo-item__percent {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--color-gold);
+    line-height: 1;
+  }
+
+  .promo-validity {
+    font-size: 10.5px;
+    color: rgba(255, 255, 255, 0.45);
+    font-style: italic;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .hero__slide--promo .hero__actions .btn {
+    width: 100%;
+    min-height: 46px;
+    height: 46px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 9999px;
+  }
+
+  /* ══════════════════════════════════════════════════════
+     CONTROLES DEL CARRUSEL EN MÓVIL
+     ══════════════════════════════════════════════════════ */
+  .carousel-control {
+    width: 30px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+  }
+
+  .carousel-control--prev { left: 4px; }
+  .carousel-control--next { right: 4px; }
+
+  .carousel-control svg {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2.5;
+  }
+
+  .carousel-indicators {
+    bottom: 10px;
+    z-index: 10;
+    gap: 6px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .carousel-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+
+  .carousel-dot.active {
+    width: 18px;
+    background: var(--color-gold);
+  }
+
+  /* Ocultar el scroll indicator en móvil */
+  .hero__scroll {
+    display: none !important;
+  }
+
+  /* ══════════════════════════════════════════════════════
+     BARRA DE BENEFICIOS (FUERA DEL HERO)
+     Compacta, visual, genera confianza inmediata
+     ══════════════════════════════════════════════════════ */
+  .benefits-strip {
+    padding: 12px 0;
+    background-color: #0a0d0a;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .benefits-strip__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 8px;
+  }
+
+  .benefit-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 7px 8px;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    justify-content: flex-start;
+  }
+
+  .benefit-item__icon {
+    width: 14px;
+    height: 14px;
+    color: var(--color-gold);
+  }
+
+  /* ══════════════════════════════════════════════════════
+     SECCIÓN "ATENDEMOS A" (CLIENTS STRIP) MÓVIL
      ══════════════════════════════════════════════════════ */
   .clients {
-    padding: 24px 0;
+    padding: 14px 0;
+    background-color: var(--color-carbon);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .clients__label {
+    font-size: 9.5px;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
   }
 
   .clients__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px;
-    padding-inline: 16px;
+    gap: 5px;
+    padding-inline: 8px;
   }
 
   .client-tag {
     flex-shrink: 0;
     white-space: nowrap;
-    font-size: 11px;
-    padding: 6px 12px;
+    font-size: 10.5px;
+    padding: 3px 9px;
+    border-radius: 9999px;
   }
 
   /* ══════════════════════════════════════════════════════
-     SECCIÓN PRODUCTOS
+     SECCIÓN PRODUCTOS / CATÁLOGO MÓVIL
      ══════════════════════════════════════════════════════ */
   .products {
-    padding-block: 48px;
+    padding-block: 32px;
+  }
+
+  .section-header {
+    margin-bottom: 18px;
+    text-align: center;
+  }
+
+  .section-eyebrow {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+
+  .section-title {
+    font-size: clamp(1.4rem, 5.5vw, 1.75rem);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .section-subtitle {
+    font-size: 13px;
+    line-height: 1.45;
+    max-width: 100%;
+  }
+
+  .filters {
+    gap: 6px;
+    margin-bottom: 20px;
+    padding-inline: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .chip {
+    font-size: 11.5px;
+    padding: 5px 12px;
+    border-radius: 9999px;
   }
 
   .products__grid {
@@ -2603,29 +2855,77 @@ html, body {
     gap: 16px;
   }
 
-  .filters {
-    gap: 6px;
-    margin-bottom: var(--space-8);
-    padding-inline: 0;
-    flex-wrap: wrap;
-    justify-content: center;
+  .card-product {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
   }
 
-  .chip {
-    font-size: 12px;
-    padding: 6px 14px;
+  .card-product__image {
+    height: 200px;
+  }
+
+  .card-product__img-placeholder {
+    height: 100%;
+  }
+
+  .card-product__img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    padding: 12px;
+  }
+
+  .card-product__body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-product__title {
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+
+  .card-product__desc {
+    font-size: 12.5px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+
+  .card-product__price {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--color-gold);
+    margin-bottom: 12px;
+  }
+
+  .card-product__actions {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .card-product__actions .btn {
+    flex: 1;
+    height: 42px;
+    min-height: 42px;
+    padding: 8px 12px;
+    font-size: 12.5px;
+    font-weight: 600;
+    border-radius: 8px;
   }
 
   /* ══════════════════════════════════════════════════════
-     SECCIÓN HOW IT WORKS
+     SECCIONES SECUNDARIAS MÓVIL (PASOS, NOSOTROS, FAQ, FOOTER)
      ══════════════════════════════════════════════════════ */
   .how-it-works {
-    padding-block: 48px;
+    padding-block: 36px;
   }
 
   .steps {
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
   }
 
   .step-card {
@@ -2637,20 +2937,17 @@ html, body {
     display: none;
   }
 
-  /* ══════════════════════════════════════════════════════
-     SECCIÓN NOSOTROS
-     ══════════════════════════════════════════════════════ */
   .about {
-    padding-block: 48px;
+    padding-block: 36px;
   }
 
   .about__grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
 
   .about__visual {
-    order: -1; /* La imagen primero en móvil */
+    order: -1;
   }
 
   .about__visual img {
@@ -2671,51 +2968,42 @@ html, body {
   }
 
   .stat-card {
-    padding: 12px 8px;
+    padding: 10px 6px;
   }
 
   .stat-card__num {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
 
   .stat-card__label {
-    font-size: 10px;
+    font-size: 9.5px;
   }
 
   .about__client-types {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
     justify-content: flex-start;
   }
 
   .client-chip {
     white-space: nowrap;
-    font-size: 11px;
+    font-size: 10.5px;
+    padding: 3px 8px;
   }
 
-  /* ══════════════════════════════════════════════════════
-     SECCIÓN CATÁLOGOS
-     ══════════════════════════════════════════════════════ */
   .products__cta {
-    margin-top: var(--space-8);
+    margin-top: var(--space-6);
   }
 
-  /* ══════════════════════════════════════════════════════
-     SECCIÓN FAQ
-     ══════════════════════════════════════════════════════ */
   .faq {
-    padding-block: 48px;
+    padding-block: 36px;
   }
 
-  /* ══════════════════════════════════════════════════════
-     CTA FINAL / CONTACTO
-     ══════════════════════════════════════════════════════ */
   .cta-final {
-    padding-block: 48px;
+    padding-block: 36px;
   }
 
-  /* Asegurar que el botón de WhatsApp no desborde en móvil */
   #ctaWhatsappBtn {
     width: calc(100% - 32px);
     max-width: 100%;
@@ -2726,59 +3014,43 @@ html, body {
     white-space: normal;
     text-align: center;
     line-height: 1.2;
-    font-size: 15px;
+    font-size: 14.5px;
     display: flex;
     justify-content: center;
+    min-height: 48px;
   }
 
   .cta-final__contact-info {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     align-items: flex-start;
   }
 
-  /* ══════════════════════════════════════════════════════
-     FOOTER
-     ══════════════════════════════════════════════════════ */
   .footer {
-    padding-block: 40px;
+    padding-block: 32px;
   }
 
   .footer__grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
 
-  /* ══════════════════════════════════════════════════════
-     WHATSAPP FLOTANTE
-     ══════════════════════════════════════════════════════ */
+  /* WhatsApp Flotante */
   .whatsapp-float {
     right: 14px !important;
     bottom: 18px !important;
-    width: 52px !important;
-    height: 52px !important;
+    width: 48px !important;
+    height: 48px !important;
   }
 
   .whatsapp-float svg {
-    width: 26px !important;
-    height: 26px !important;
+    width: 24px !important;
+    height: 24px !important;
   }
 
-  /* Ocultar tooltip en móvil */
   .whatsapp-float__tooltip {
     display: none !important;
   }
-
-  /* ══════════════════════════════════════════════════════
-     SECCIÓN TITLE RESPONSIVE
-     ══════════════════════════════════════════════════════ */
-  .section-title {
-    font-size: clamp(1.6rem, 6vw, 2rem);
-  }
-
-  .section-subtitle {
-    font-size: 0.9rem;
-  }
-
 }
+
 
