@@ -1156,6 +1156,9 @@ input, textarea { font-family: var(--font-primary); }
 .card-product__img-placeholder--canasta {
   background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #0a1628 100%);
 }
+.card-product__img-placeholder--canasta .card-product__img {
+  padding: 8px;
+}
 .card-product__img-placeholder--kit {
   background: linear-gradient(135deg, #111111 0%, #2d2d2d 50%, #111111 100%);
 }
@@ -2903,6 +2906,10 @@ html, body {
     width: 100% !important;
     object-fit: contain !important;
     padding: 12px !important;
+  }
+
+  .card-product__img-placeholder--canasta .card-product__img {
+    padding: 6px !important;
   }
 
   .card-product__body {
